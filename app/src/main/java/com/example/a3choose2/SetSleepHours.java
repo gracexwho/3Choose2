@@ -37,8 +37,13 @@ public class SetSleepHours extends AppCompatActivity implements View.OnClickList
         curr = curr + 1;
         EditText editText = (EditText) findViewById(R.id.sleep_hours_int);
         int sleep_hours= Integer.parseInt(editText.getText().toString());
+        extras.putInt("curr", curr);
+        extras.putInt("sleep_hours", sleep_hours);
 
         if (curr == 3) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtras(extras);
+            startActivity(intent);
 
         } else {
             Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
@@ -46,16 +51,12 @@ public class SetSleepHours extends AppCompatActivity implements View.OnClickList
 
             if (priorities.get(curr) == "School") {
                 Intent intent = new Intent(this, SetSchoolHours.class);
-                extras.putInt("curr", curr);
-                extras.putInt("sleep_hours", sleep_hours);
                 intent.putExtras(extras);
                 startActivity(intent);
 
             } else {
                 // it's school
                 Intent intent = new Intent(this, SetSchoolHours.class);
-                extras.putInt("curr", curr);
-                extras.putInt("sleep_hours", sleep_hours);
                 intent.putExtras(extras);
                 startActivity(intent);
             }

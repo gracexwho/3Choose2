@@ -32,31 +32,31 @@ public class SetSocialHours extends AppCompatActivity  implements View.OnClickLi
         next_button.setOnClickListener(this);
 
 
-
     }
 
     public void onClick(View v) {
         curr = curr + 1;
         EditText editText = (EditText) findViewById(R.id.social_hours_int);
         int social_hours= Integer.parseInt(editText.getText().toString());
+        extras.putInt("curr", curr);
+        extras.putInt("social_hours", social_hours);
 
         if (curr == 3) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtras(extras);
+            startActivity(intent);
 
         } else {
             Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
             toast.show();
             if (priorities.get(curr) == "School") {
                 Intent intent = new Intent(this, SetSchoolHours.class);
-                extras.putInt("curr", curr);
-                extras.putInt("sleep_hours", school_hours);
                 intent.putExtras(extras);
                 startActivity(intent);
 
             } else {
                 // it's sleep
                 Intent intent = new Intent(this, SetSleepHours.class);
-                extras.putInt("curr", curr);
-                extras.putInt("sleep_hours", school_hours);
                 intent.putExtras(extras);
                 startActivity(intent);
             }
