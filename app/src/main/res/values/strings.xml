@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">3 Choose 2</string>
-    <string name="launchscreen_instruction">Please press buttons \naccording to your priorities!</string>
+    <string name="launchscreen_instruction1">Please press buttons \naccording to your priorities!</string>
+    <string name="launchscreen_instruction2">McGill Version</string>
     <string name="school"><b>School</b></string>
     <string name="social"><b>Social Life</b></string>
     <string name="sleep"><b>Sleep</b></string>
