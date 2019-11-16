@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SetSocialHours extends AppCompatActivity  implements View.OnClickListener{
+public class SetSocialHours extends AppCompatActivity implements View.OnClickListener{
     private ArrayList<String> priorities = new ArrayList<String>();
     private int curr = 0;
     Bundle extras = new Bundle();
