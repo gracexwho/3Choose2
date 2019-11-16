@@ -209,7 +209,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()) {
             case R.id.school_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
                 //startActivity(intent1);
                 clicked += 1;
@@ -229,7 +229,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 }
             case R.id.social_button:
                 // now navigate to next page
-                Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
                 priorities.add("Social");
                 clicked += 1;
@@ -247,7 +247,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 }
             case R.id.sleep_button:
                 // now navigate to next page
-                Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
                 priorities.add("Sleep");
                 order_intents.add(new Intent(this, SetSleepHours.class));

@@ -2,13 +2,58 @@ package com.example.a3choose2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class SetSocialHours extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class SetSocialHours extends AppCompatActivity  implements View.OnClickListener{
+    private ArrayList<String> priorities = new ArrayList<String>();
+    private int curr = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_social_hours);
+
+        Intent prev = getIntent();
+        priorities = prev.getStringArrayListExtra("priorities");
+        curr = prev.getIntExtra("curr", 0);
+
+
+        // now get next activity
+
+        Button next_button = findViewById(R.id.next_social);
+        next_button.setOnClickListener(this);
+
+
+
     }
+
+    public void onClick(View v) {
+        curr += 1;
+        if (curr == 3) {
+
+
+        } else {
+            if (priorities.get(curr) == "School") {
+                Intent intent = new Intent(this, SetSchoolHours.class);
+                intent.putExtra("curr", curr);
+                intent.putExtra("priorities", priorities);
+                startActivity(intent);
+
+            } else {
+                // it's sleep
+                Intent intent = new Intent(this, SetSleepHours.class);
+                intent.putExtra("curr", curr);
+                intent.putExtra("priorities", priorities);
+                startActivity(intent);
+            }
+        }
+    }
+
+
+
 }
