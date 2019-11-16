@@ -37,7 +37,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
 
     private int clicked = 0;
     final ArrayList<String> priorities = new ArrayList<String>();
-
+    final Intent[] order_intents = new Intent[3];
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -212,58 +212,55 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
                 //startActivity(intent1);
-                //Intent intent1 = new Intent(this, SetSchoolHours.class);
-                //.add(intent1);
                 clicked += 1;
                 priorities.add("School");
 
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
-                    //bundle.putStringArrayList("priorities", priorities);
-                    Intent intent = new Intent(this, MainActivity.class);
+                    //bundle.putParcelableArrayList("order_intents", order_intents);
+                    Intent intent = new Intent(this, SetSchoolHours.class);
                     intent.putExtra("priorities", priorities);
+                    intent.putExtra("curr", 1);
                     startActivity(intent);
+                } else {
+                    break;
                 }
-                break;
             case R.id.social_button:
                 // now navigate to next page
                 Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
-                //Intent intent2 = new Intent(this, SetSocialHours.class);
-                //startActivity(intent2);
-                //order_intents.add(intent2);
                 priorities.add("Social");
                 clicked += 1;
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
-                    //bundle.putStringArrayList("priorities", priorities);
-                    Intent intent = new Intent(this, MainActivity.class);
+                    //bundle.putParcelableArrayList("order_intents", order_intents);
+                    Intent intent = new Intent(this, SetSocialHours.class);
                     intent.putExtra("priorities", priorities);
+                    intent.putExtra("curr", 1);
                     startActivity(intent);
+                } else {
+                    break;
                 }
-
-                break;
             case R.id.sleep_button:
                 // now navigate to next page
                 Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
-                // intent3 = new Intent(this, SetSleepHours.class);
-                //startActivity(intent3);
-                //order_intents.add(intent3);
                 priorities.add("Sleep");
                 clicked += 1;
 
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
-                    //bundle.putStringArrayList("priorities", priorities);
-                    Intent intent = new Intent(this, MainActivity.class);
+                    //bundle.putParcelableArrayList("order_intents", order_intents);
+                    Intent intent = new Intent(this, SetSleepHours.class);
                     intent.putExtra("priorities", priorities);
+                    intent.putExtra("curr", 1);
                     startActivity(intent);
+                } else {
+                    break;
                 }
-                break;
         }
     }
 }
