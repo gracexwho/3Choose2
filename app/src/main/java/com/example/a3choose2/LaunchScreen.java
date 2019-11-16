@@ -37,7 +37,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
 
     private int clicked = 0;
     final ArrayList<String> priorities = new ArrayList<String>();
-    final Intent[] order_intents = new Intent[3];
+    final ArrayList<Intent> order_intents = new ArrayList<Intent>();
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -214,14 +214,15 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //startActivity(intent1);
                 clicked += 1;
                 priorities.add("School");
+                order_intents.add(new Intent(this, SetSchoolHours.class));
 
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
                     //bundle.putParcelableArrayList("order_intents", order_intents);
-                    Intent intent = new Intent(this, SetSchoolHours.class);
+                    Intent intent = order_intents.get(0);
                     intent.putExtra("priorities", priorities);
-                    intent.putExtra("curr", 1);
+                    intent.putExtra("curr", 0);
                     startActivity(intent);
                 } else {
                     break;
@@ -232,13 +233,14 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 v.setVisibility(View.GONE);
                 priorities.add("Social");
                 clicked += 1;
+                order_intents.add(new Intent(this, SetSocialHours.class));
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
                     //bundle.putParcelableArrayList("order_intents", order_intents);
-                    Intent intent = new Intent(this, SetSocialHours.class);
+                    Intent intent = order_intents.get(0);
                     intent.putExtra("priorities", priorities);
-                    intent.putExtra("curr", 1);
+                    intent.putExtra("curr", 0);
                     startActivity(intent);
                 } else {
                     break;
@@ -248,15 +250,16 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
                 priorities.add("Sleep");
+                order_intents.add(new Intent(this, SetSleepHours.class));
                 clicked += 1;
 
                 if (clicked == 3) {
                     // then all buttons have been clicked
                     //Bundle bundle = new Bundle();
                     //bundle.putParcelableArrayList("order_intents", order_intents);
-                    Intent intent = new Intent(this, SetSleepHours.class);
+                    Intent intent = order_intents.get(0);
                     intent.putExtra("priorities", priorities);
-                    intent.putExtra("curr", 1);
+                    intent.putExtra("curr", 0);
                     startActivity(intent);
                 } else {
                     break;
