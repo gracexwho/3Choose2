@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -185,15 +186,15 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()) {
             case R.id.school_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked");
+                Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.social_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked");
+                Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked");
+                Toast.makeText(this, "School clicked", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
