@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,8 @@ public class SetSocialHours extends AppCompatActivity  implements View.OnClickLi
 
     public void onClick(View v) {
         curr += 1;
+        Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+        toast.show();
         if (curr == 3) {
 
 

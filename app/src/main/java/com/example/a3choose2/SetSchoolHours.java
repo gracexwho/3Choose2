@@ -34,7 +34,7 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
 
     public void onClick(View v) {
         curr = curr + 1;
-        Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
         toast.show();
         if (curr == 3) {
 
