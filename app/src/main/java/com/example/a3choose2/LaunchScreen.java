@@ -145,14 +145,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
 
-        if (clicked == 3) {
-            // then all buttons have been clicked
-            //Bundle bundle = new Bundle();
-            //bundle.putStringArrayList("priorities", priorities);
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("priorities", priorities);
-            startActivity(intent);
-        }
+
 
 
     }
@@ -223,6 +216,15 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //.add(intent1);
                 clicked += 1;
                 priorities.add("School");
+
+                if (clicked == 3) {
+                    // then all buttons have been clicked
+                    //Bundle bundle = new Bundle();
+                    //bundle.putStringArrayList("priorities", priorities);
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.putExtra("priorities", priorities);
+                    startActivity(intent);
+                }
                 break;
             case R.id.social_button:
                 // now navigate to next page
@@ -233,6 +235,15 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //order_intents.add(intent2);
                 priorities.add("Social");
                 clicked += 1;
+                if (clicked == 3) {
+                    // then all buttons have been clicked
+                    //Bundle bundle = new Bundle();
+                    //bundle.putStringArrayList("priorities", priorities);
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.putExtra("priorities", priorities);
+                    startActivity(intent);
+                }
+
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
@@ -243,6 +254,15 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //order_intents.add(intent3);
                 priorities.add("Sleep");
                 clicked += 1;
+
+                if (clicked == 3) {
+                    // then all buttons have been clicked
+                    //Bundle bundle = new Bundle();
+                    //bundle.putStringArrayList("priorities", priorities);
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.putExtra("priorities", priorities);
+                    startActivity(intent);
+                }
                 break;
         }
     }

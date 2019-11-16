@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<String> order = load_screen.getStringArrayListExtra("priorities");
 
-       // Toast.makeText(this, order.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, order.get(0), Toast.LENGTH_LONG).show();
     }
 
 
