@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">3 Choose 2</string>
+    <string name="school">School</string>
+    <string name="social">Social Life</string>
+    <string name="sleep">Sleep</string>
+    <string name="poison">Pick Your Poison</string>
+</resources>
