@@ -12,6 +12,7 @@
 
     <string name="title_activity_launch_screen">LaunchScreen</string>
     <string name="next">Next</string>
+    <string name="hint_number">Enter the # of hours</string>
 
 
 </resources>
