@@ -35,12 +35,11 @@ public class SetSocialHours extends AppCompatActivity  implements View.OnClickLi
 
     public void onClick(View v) {
         curr += 1;
-        Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-        toast.show();
         if (curr == 3) {
 
-
         } else {
+            Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+            toast.show();
             if (priorities.get(curr) == "School") {
                 Intent intent = new Intent(this, SetSchoolHours.class);
                 intent.putExtra("curr", curr);
