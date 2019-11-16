@@ -2,6 +2,7 @@ package com.example.a3choose2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bundle bundle = getIntent().getExtras();
-        ArrayList<String> order = bundle.getStringArrayList("priorities");
+       // Bundle bundle = getIntent().getExtras();
+        Intent load_screen = getIntent();
 
-        Toast.makeText(this, order.toString(), Toast.LENGTH_LONG).show();
+        ArrayList<String> order = load_screen.getStringArrayListExtra("priorities");
+
+       // Toast.makeText(this, order.toString(), Toast.LENGTH_LONG).show();
     }
 
 
