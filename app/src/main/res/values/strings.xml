@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">3 Choose 2</string>
     <string name="launchscreen_instruction">Please press buttons \naccording to your priorities!</string>
-    <string name="school">School</string>
-    <string name="social">Social Life</string>
-    <string name="sleep">Sleep</string>
+    <string name="school"><b>School</b></string>
+    <string name="social"><b>Social Life</b></string>
+    <string name="sleep"><b>Sleep</b></string>
     <string name="poison">Pick Your Poison</string>
 
     <string name="title_activity_launch_screen">LaunchScreen</string>
