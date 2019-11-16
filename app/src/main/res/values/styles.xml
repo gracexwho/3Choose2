@@ -20,4 +20,10 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style name="FlatButton" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/myPeach</item>
+        <item name="colorControlHighlight">@color/myRed</item>
+    </style>
+
+
 </resources>

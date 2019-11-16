@@ -51,6 +51,7 @@
 
         <Button
             android:id="@+id/school_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/school"
@@ -63,6 +64,7 @@
 
         <Button
             android:id="@+id/social_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/social"
@@ -73,6 +75,7 @@
 
         <Button
             android:id="@+id/sleep_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sleep"
