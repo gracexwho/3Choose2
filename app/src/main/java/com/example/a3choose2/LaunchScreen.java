@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -16,7 +17,7 @@ import android.widget.Button;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class LaunchScreen extends AppCompatActivity {
+public class LaunchScreen extends AppCompatActivity implements View.OnClickListener {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -116,16 +117,9 @@ public class LaunchScreen extends AppCompatActivity {
         Button button2 = findViewById(R.id.social_button);
         Button button3 = findViewById(R.id.school_button);
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-
-            public void OnClick(View v) {
-
-            }
-        });
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
 
 
 
@@ -186,5 +180,21 @@ public class LaunchScreen extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.school_button:
+                // now navigate to next page
+                Toast.makeText(this, "School clicked");
+                break;
+            case R.id.social_button:
+                // now navigate to next page
+                Toast.makeText(this, "School clicked");
+                break;
+            case R.id.sleep_button:
+                // now navigate to next page
+                Toast.makeText(this, "School clicked");
+                break;
+        }
+    }
 }
