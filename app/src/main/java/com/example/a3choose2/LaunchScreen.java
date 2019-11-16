@@ -114,16 +114,13 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
 
-        Button button1 = findViewById(R.id.sleep_button);
+        Button button1 = findViewById(R.id.school_button);
         Button button2 = findViewById(R.id.social_button);
-        Button button3 = findViewById(R.id.school_button);
+        Button button3 = findViewById(R.id.sleep_button);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
-
-
-
 
     }
 
@@ -187,14 +184,17 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
             case R.id.school_button:
                 // now navigate to next page
                 Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
+                v.setVisibility(View.GONE);
                 break;
             case R.id.social_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
+                v.setVisibility(View.GONE);
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
-                Toast.makeText(this, "School clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
+                v.setVisibility(View.GONE);
                 break;
         }
     }
