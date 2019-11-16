@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
@@ -93,6 +95,12 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+
+
+    private List<Intent> order_intents;
+
+    private int clicked = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +133,12 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
+
+        if (clicked == 3) {
+            // then all buttons have been clicked
+
+
+        }
 
     }
 
@@ -189,22 +203,28 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 // now navigate to next page
                 Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
-                Intent intent1 = new Intent(this, SetSchoolHours.class);
-                startActivity(intent1);
+                //startActivity(intent1);
+                //Intent intent1 = new Intent(this, SetSchoolHours.class);
+                //.add(intent1);
+                clicked += 1;
                 break;
             case R.id.social_button:
                 // now navigate to next page
                 Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
-                Intent intent2 = new Intent(this, SetSocialHours.class);
-                startActivity(intent2);
+                //Intent intent2 = new Intent(this, SetSocialHours.class);
+                //startActivity(intent2);
+                //order_intents.add(intent2);
+                clicked += 1;
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
                 Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
-                Intent intent3 = new Intent(this, SetSleepHours.class);
-                startActivity(intent3);
+                // intent3 = new Intent(this, SetSleepHours.class);
+                //startActivity(intent3);
+                //order_intents.add(intent3);
+                clicked += 1;
                 break;
         }
     }
