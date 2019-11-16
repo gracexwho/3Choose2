@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class SetSchoolHours extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> priorities = new ArrayList<String>();
     private int curr = 0;
+    Bundle extras = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +22,9 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_set_school_hours);
 
         Intent prev = getIntent();
-        priorities = prev.getStringArrayListExtra("priorities");
-        curr = prev.getIntExtra("curr", 0);
+        extras = prev.getExtras();
+        priorities = extras.getStringArrayList("priorities");
+        curr = extras.getInt("curr", 0);
 
 
         // now get next activity
@@ -34,6 +37,8 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
 
     public void onClick(View v) {
         curr = curr + 1;
+        EditText editText = (EditText) findViewById(R.id.school_hours_int);
+        int school_hours= Integer.parseInt(editText.getText().toString());
 
         if (curr == 3) {
 
@@ -43,15 +48,17 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
             if (priorities.get(curr) == "Social") {
 
                 Intent intent = new Intent(this, SetSocialHours.class);
-                intent.putExtra("curr", curr);
-                intent.putExtra("priorities", priorities);
+                extras.putInt("curr", curr);
+                extras.putInt("sleep_hours", school_hours);
+                intent.putExtras(extras);
                 startActivity(intent);
 
             } else {
                 // it's sleep
                 Intent intent = new Intent(this, SetSleepHours.class);
-                intent.putExtra("curr", curr);
-                intent.putExtra("priorities", priorities);
+                extras.putInt("curr", curr);
+                extras.putInt("sleep_hours", school_hours);
+                intent.putExtras(extras);
                 startActivity(intent);
             }
 
