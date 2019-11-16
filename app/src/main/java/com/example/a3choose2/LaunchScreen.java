@@ -28,7 +28,16 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
+
+
+
 public class LaunchScreen extends AppCompatActivity implements View.OnClickListener {
+
+
+
+    private int clicked = 0;
+    final ArrayList<String> priorities = new ArrayList<String>();
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -101,9 +110,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private ArrayList<String> priorities;
 
-    private int clicked = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,7 +144,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
-/**
+
         if (clicked == 3) {
             // then all buttons have been clicked
             //Bundle bundle = new Bundle();
@@ -146,7 +153,7 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("priorities", priorities);
             startActivity(intent);
         }
- **/
+
 
     }
 
@@ -214,8 +221,8 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //startActivity(intent1);
                 //Intent intent1 = new Intent(this, SetSchoolHours.class);
                 //.add(intent1);
-             //   clicked += 1;
-              //  priorities.add("School");
+                clicked += 1;
+                priorities.add("School");
                 break;
             case R.id.social_button:
                 // now navigate to next page
@@ -224,8 +231,8 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 //Intent intent2 = new Intent(this, SetSocialHours.class);
                 //startActivity(intent2);
                 //order_intents.add(intent2);
-             //   priorities.add("Social");
-            //    clicked += 1;
+                priorities.add("Social");
+                clicked += 1;
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
@@ -234,8 +241,8 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 // intent3 = new Intent(this, SetSleepHours.class);
                 //startActivity(intent3);
                 //order_intents.add(intent3);
-             //   priorities.add("Sleep");
-            //    clicked += 1;
+                priorities.add("Sleep");
+                clicked += 1;
                 break;
         }
     }
