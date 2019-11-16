@@ -4,4 +4,8 @@
     <string name="social">Social Life</string>
     <string name="sleep">Sleep</string>
     <string name="poison">Pick Your Poison</string>
+
+    <string name="title_activity_launch_screen">LaunchScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
