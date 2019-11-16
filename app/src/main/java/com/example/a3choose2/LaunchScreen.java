@@ -6,13 +6,17 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -185,16 +189,22 @@ public class LaunchScreen extends AppCompatActivity implements View.OnClickListe
                 // now navigate to next page
                 Toast.makeText(this, "School clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
+                Intent intent1 = new Intent(this, SetSchoolHours.class);
+                startActivity(intent1);
                 break;
             case R.id.social_button:
                 // now navigate to next page
                 Toast.makeText(this, "Social clicked",Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
+                Intent intent2 = new Intent(this, SetSocialHours.class);
+                startActivity(intent2);
                 break;
             case R.id.sleep_button:
                 // now navigate to next page
                 Toast.makeText(this, "Sleep clicked", Toast.LENGTH_SHORT).show();
                 v.setVisibility(View.GONE);
+                Intent intent3 = new Intent(this, SetSleepHours.class);
+                startActivity(intent3);
                 break;
         }
     }

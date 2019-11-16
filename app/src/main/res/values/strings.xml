@@ -7,8 +7,6 @@
     <string name="poison">Pick Your Poison</string>
 
     <string name="title_activity_launch_screen">LaunchScreen</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="social_button">social_button</string>
-    <string name="school_button">school_button</string>
-    <string name="sleep_button">sleep_button</string>
+
+
 </resources>
