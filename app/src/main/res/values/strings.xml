@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">3 Choose 2</string>
     <string name="launchscreen_instruction1">Please press buttons \naccording to your priorities!</string>
-    <string name="launchscreen_instruction2">McGill Version</string>
-    <string name="activity_set_sleep_hours_instruction">Please enter hours of sleep you desire today</string>
-    <string name="activity_set_school_hours_instruction">Please enter hours of school you desire today</string>
-    <string name="activity_set_social_hours_instruction">Please enter hours of social life you desire today</string>
+    <string name="launchscreen_instruction2">McGill Version \nHelps you find balance in life</string>
+    <string name="activity_set_sleep_hours_instruction">Please enter hours of \nsleep you desire</string>
+    <string name="activity_set_school_hours_instruction">Please enter hours of \nschool you desire</string>
+    <string name="activity_set_social_hours_instruction">Please enter hours of \nsocial life you desire</string>
     <string name="school"><b>School</b></string>
     <string name="social"><b>Social Life</b></string>
     <string name="sleep"><b>Sleep</b></string>

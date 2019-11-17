@@ -8,13 +8,13 @@
     tools:context=".SetSleepHours">
 
     <TextView
-        android:id="@+id/activity_set_sleep_hours_instruction"
+        android:id="@+id/launchscreen_instruction1"
         android:layout_width="306dp"
         android:layout_height="79dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         android:gravity="center"
         android:text="@string/activity_set_sleep_hours_instruction"
         android:textColor="#FFFFFF"
@@ -25,28 +25,33 @@
         app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284"
+        app:layout_constraintVertical_bias="0.3"
         tools:text="@string/activity_set_sleep_hours_instruction" />
 
     <Button
         android:id="@+id/next_sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:text="@string/next"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:fontFamily="@font/baloo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <EditText
         android:id="@+id/sleep_hours_int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="306dp"
+        android:layout_height="79dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/hint_number"
         android:inputType="number"
+        app:fontFamily="@font/baloo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
