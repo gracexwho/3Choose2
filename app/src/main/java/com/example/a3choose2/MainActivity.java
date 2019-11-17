@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         extras = info.getExtras();
 
+        // here are all the hours the user entered
         int sleep_hours = extras.getInt("sleep_hours");
         int social_hours = extras.getInt("social_hours");
         int school_hours = extras.getInt("school_hours");
