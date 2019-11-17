@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class SetSchoolHours extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> priorities = new ArrayList<String>();
-    private int curr = 0;
     Bundle extras = new Bundle();
 
     @Override
@@ -24,7 +23,6 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
         Intent prev = getIntent();
         extras = prev.getExtras();
         priorities = extras.getStringArrayList("priorities");
-        curr = extras.getInt("curr", 0);
 
 
         // now get next activity
@@ -36,21 +34,23 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
     }
 
     public void onClick(View v) {
+        int curr = extras.getInt("curr");
         curr = curr + 1;
         EditText editText = (EditText) findViewById(R.id.school_hours_int);
         int school_hours= Integer.parseInt(editText.getText().toString());
         extras.putInt("curr", curr);
         extras.putInt("school_hours", school_hours);
 
-        if (curr == 3) {
+        if (curr >= 3) {
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtras(extras);
-            startActivity(intent);
+            //startActivity(intent);
 
         } else {
-           // Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-           // toast.show();
-            if (priorities.get(curr) == "Social") {
+            Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+            toast.show();
+
+            if (priorities.get(curr).contentEquals("Social")) {
 
                 Intent intent = new Intent(this, SetSocialHours.class);
                 intent.putExtras(extras);
