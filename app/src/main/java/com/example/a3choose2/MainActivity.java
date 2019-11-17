@@ -57,8 +57,24 @@ public class MainActivity extends AppCompatActivity {
             // "Taking 15 credits means you should be studying 6 hours a day."
             int missing_school = 6 - school_hours;
             missing_school = (int) (missing_school*days);
-            int percent_decrease = missing_school/(105*6)*100;
+            int bad_mark = 100 - (missing_school/(105*6)*100);
+            // new mark out of 100
 
+            if (bad_mark >= 85) {
+                // "No decrease
+            } else if (bad_mark < 85 && bad_mark >= 80) {
+                // "3.7, SO DECREASE BY 0.3 GPA points
+            } else if (bad_mark < 80 && bad_mark >= 75) {
+                // 3.3, so decrease is 0.7
+            } else if (bad_mark <75 && bad_mark >= 70) {
+                // 3.0, so decrease is 1.0
+            } else if (bad_mark <70 && bad_mark >= 65) {
+                // 2.7, so decrease is 1.3
+            } else if (bad_mark <65 && bad_mark >=60) {
+                // 2.3, so decrease is 1.7
+            } else {
+                // decrease is 4.0, you get a 0
+            }
 
         }
 
