@@ -8,7 +8,7 @@
     <string name="school"><b>School</b></string>
     <string name="social"><b>Social Life</b></string>
     <string name="sleep"><b>Sleep</b></string>
-    <string name="poison">Pick Your Poison</string>
+    <string name="result">Result</string>
 
     <string name="title_activity_launch_screen">LaunchScreen</string>
     <string name="next">Next</string>
