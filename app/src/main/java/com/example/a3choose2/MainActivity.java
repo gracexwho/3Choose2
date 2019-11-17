@@ -1,10 +1,12 @@
 package com.example.a3choose2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GestureDetectorCompat;
 
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     // display results
     private Bundle extras = new Bundle();
 
-
+    private GestureDetectorCompat gestureDetectorCompat = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,8 +103,23 @@ public class MainActivity extends AppCompatActivity {
         TextView sleep_message = (TextView)findViewById(R.id.sleep_message);
         school_message.setText("Sup");
 
+        DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
+        gestureListener.setActivity(this);
+        gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        gestureDetectorCompat.onTouchEvent(event);
+        return true;
+    }
+
+    public void finalScreen() {
+        // go to next screen actually and rename this
+        Intent intent = new Intent(this, ExitScreen.class);
+        startActivity(intent);
     }
 
 
