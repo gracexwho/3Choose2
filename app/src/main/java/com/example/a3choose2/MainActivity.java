@@ -18,7 +18,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
-
+    // display results
     private Bundle extras = new Bundle();
     private int bad_mark = 0;
 
