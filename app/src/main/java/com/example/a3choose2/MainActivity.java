@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     // display results
     private Bundle extras = new Bundle();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +102,12 @@ public class MainActivity extends AppCompatActivity {
         school_message.setText("Sup");
 
 
+
     }
+
+
+
+
 
 
 }
