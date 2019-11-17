@@ -101,14 +101,31 @@ public class MainActivity extends AppCompatActivity {
 
         // this is how to dynamically update the text in the "CardView" boxes!!! @SHUA
         TextView school_message = (TextView)findViewById(R.id.school_message);
-        school_message.setText("Estimated Term GPA decrease: -" + decrease);
-
+        if (school_hours>12){
+            school_message.setText("You are studying way too much. \nPlease make sure you do take breaks!");
+        }else if (decrease==0) {
+            school_message.setText("Great :) \nyou should be able to maintain \nor even get better GPA!");
+        }else {
+            school_message.setText("Oh no... \nEstimated Term GPA decrease: -" + decrease);
+        }
 
         TextView social_message = (TextView)findViewById(R.id.social_message);
-        social_message.setText("Hey there");
+        if (sleep_hours<8 && decrease!=0) { //not sleeping enough and getting bad GPA
+            social_message.setText("You might want to decrease social hours to achieve an optimal balance!");
+        }else if (social_hours==0){ //not having any social life
+            social_message.setText("You should have some social hours, \nplease spare some time to talk to people you care about!");
+        }else{
+            social_message.setText("Great :) \nKeep up this balance!");
+        }
 
         TextView sleep_message = (TextView)findViewById(R.id.sleep_message);
-        sleep_message.setText("Sup");
+        if (sleep_hours<8) {
+            sleep_message.setText("You should definitely sleep more!");
+        }else if (sleep_hours>10){
+            sleep_message.setText("You are probably sleeping too much...");
+        }else{
+            sleep_message.setText("Great :) \nYou have a good amount of sleep!");
+        }
 
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
         gestureListener.setActivity(this);
