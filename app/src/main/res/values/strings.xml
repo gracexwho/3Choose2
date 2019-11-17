@@ -18,7 +18,9 @@
     <string name="title_activity_exit_screen">ExitScreen</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="final_message">In the end, life is not about trying to do as many things as possible in the shortest period of time. It\'s about finding the right balance. You might only be able to choose 2 out of the 3 staples of college student life, and that\'s fine. Or you may have to do the energy to do all 3, and that\'s fine too. Don\'t let the media or us tell you what to do.</string>
+    <string name="final_message">In the end, life is not about trying to do as many things as possible in the shortest period of time.
+        We all know that we can only choose two out of school, social, and sleep.\n<i>But we must balance all three factors well in daily lives...</i>\nOtherwise, we won't be able to survive in McGill for long.\nWe hope we gave you a hint in how to better balance your life.
+    \nMost importantly, we wish you the best life in McGill, take care :)</string>
 
 
 </resources>
