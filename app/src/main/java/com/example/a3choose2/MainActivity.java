@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         long diff = last_date.getTime() - curr_date.getTime();
         long days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
         int bad_mark = 0;
+        double decrease = 0.0;
 
         if (total > 24) {
             Toast.makeText(this, "Don't be greedy", Toast.LENGTH_SHORT).show();
@@ -71,37 +72,43 @@ public class MainActivity extends AppCompatActivity {
 
             //Toast toast = Toast.makeText(this, String.valueOf(missing_school), Toast.LENGTH_SHORT);
             //toast.show();
-            bad_mark = (int)((school_hours*days/(105*6))*100);
+            bad_mark = (int)((school_hours*days/(days*6))*100);
             // new mark out of 100
 
             if (bad_mark >= 85) {
-                // "No decrease
+                decrease = 0.0;
             } else if (bad_mark < 85 && bad_mark >= 80) {
                 // "3.7, SO DECREASE BY 0.3 GPA points
+                decrease = 0.3;
             } else if (bad_mark < 80 && bad_mark >= 75) {
                 // 3.3, so decrease is 0.7
+                decrease = 0.7;
             } else if (bad_mark <75 && bad_mark >= 70) {
                 // 3.0, so decrease is 1.0
+                decrease = 1.0;
             } else if (bad_mark <70 && bad_mark >= 65) {
                 // 2.7, so decrease is 1.3
+                decrease = 1.3;
             } else if (bad_mark <65 && bad_mark >=60) {
                 // 2.3, so decrease is 1.7
+                decrease = 1.7;
             } else {
                 // decrease is 4.0, you get a 0
+                decrease = 4.0;
             }
 
         }
 
         // this is how to dynamically update the text in the "CardView" boxes!!! @SHUA
         TextView school_message = (TextView)findViewById(R.id.school_message);
-        school_message.setText("Hello");
+        school_message.setText("Estimated Term GPA decrease: -" + decrease);
 
 
         TextView social_message = (TextView)findViewById(R.id.social_message);
-        school_message.setText("Hey there");
+        social_message.setText("Hey there");
 
         TextView sleep_message = (TextView)findViewById(R.id.sleep_message);
-        school_message.setText("Sup");
+        sleep_message.setText("Sup");
 
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
         gestureListener.setActivity(this);
