@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Intent info = getIntent();
 
         extras = info.getExtras();
+        /**
 
         // here are all the hours the user entered
         int sleep_hours = extras.getInt("sleep_hours");
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Toast toast = Toast.makeText(this, bad_mark, Toast.LENGTH_SHORT);
         toast.show();
-
+        **/
 
     }
 

@@ -47,13 +47,13 @@ public class SetSocialHours extends AppCompatActivity implements View.OnClickLis
         extras.putInt("social_hours", social_hours);
 
         if (curr >= 3) {
-           // Intent intent = new Intent(this, MainActivity.class);
-            //intent.putExtras(extras);
-            //startActivity(intent);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtras(extras);
+            startActivity(intent);
 
         } else {
-            Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-            toast.show();
+            //Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+            //toast.show();
 
             if (priorities.get(curr).contentEquals("School")) {
                 Intent intent = new Intent(this, SetSchoolHours.class);

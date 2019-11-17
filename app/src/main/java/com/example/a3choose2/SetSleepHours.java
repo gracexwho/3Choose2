@@ -42,11 +42,11 @@ public class SetSleepHours extends AppCompatActivity implements View.OnClickList
         if (curr >= 3) {
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtras(extras);
-            //startActivity(intent);
+            startActivity(intent);
 
         } else {
-         Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-         toast.show();
+         //Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+         //toast.show();
 
             if (priorities.get(curr).contentEquals("School")) {
                 Intent intent = new Intent(this, SetSchoolHours.class);
