@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
@@ -20,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
     // display results
     private Bundle extras = new Bundle();
-    private int bad_mark = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Intent info = getIntent();
 
         extras = info.getExtras();
-        /**
+
 
         // here are all the hours the user entered
         int sleep_hours = extras.getInt("sleep_hours");
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date curr_date = new Date();
         Date last_date = new Date();
+
         try {
             curr_date = sdf.parse(datestr);
             last_date = sdf.parse("2019-12-04");
@@ -50,17 +51,23 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
         long diff = last_date.getTime() - curr_date.getTime();
         long days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        int bad_mark = 0;
 
         if (total > 24) {
-            // "Don't be greedy, you'll never be able to do so many things in one day."
+            Toast.makeText(this, "Don't be greedy", Toast.LENGTH_SHORT).show();
         }
+
         if (school_hours < 6) {
             // "Taking 15 credits means you should be studying 6 hours a day."
-            int missing_school = 6 - school_hours;
-            missing_school = (int) (missing_school*days);
-            bad_mark = 100 - (missing_school/(105*6)*100);
+            //double missing_school = 6 - school_hours;
+            //missing_school = (missing_school*days);
+
+            //Toast toast = Toast.makeText(this, String.valueOf(missing_school), Toast.LENGTH_SHORT);
+            //toast.show();
+            bad_mark = (int)((school_hours*days/(105*6))*100);
             // new mark out of 100
 
             if (bad_mark >= 85) {
@@ -80,9 +87,18 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-        Toast toast = Toast.makeText(this, bad_mark, Toast.LENGTH_SHORT);
-        toast.show();
-        **/
+
+        // this is how to dynamically update the text in the "CardView" boxes!!! @SHUA
+        TextView school_message = (TextView)findViewById(R.id.school_message);
+        school_message.setText("Hello");
+
+
+        TextView social_message = (TextView)findViewById(R.id.social_message);
+        school_message.setText("Hey there");
+
+        TextView sleep_message = (TextView)findViewById(R.id.sleep_message);
+        school_message.setText("Sup");
+
 
     }
 
