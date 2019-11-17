@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
 
     private Bundle extras = new Bundle();
+    private int bad_mark = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             // "Taking 15 credits means you should be studying 6 hours a day."
             int missing_school = 6 - school_hours;
             missing_school = (int) (missing_school*days);
-            int bad_mark = 100 - (missing_school/(105*6)*100);
+            bad_mark = 100 - (missing_school/(105*6)*100);
             // new mark out of 100
 
             if (bad_mark >= 85) {
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        Toast toast = Toast.makeText(this, bad_mark, Toast.LENGTH_SHORT);
+        toast.show();
 
 
     }

@@ -46,8 +46,8 @@ public class SetSleepHours extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
 
         } else {
-            Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-            toast.show();
+         //   Toast toast = Toast.makeText(this, "Keep Going", Toast.LENGTH_SHORT);
+            //   toast.show();
 
             if (priorities.get(curr) == "School") {
                 Intent intent = new Intent(this, SetSchoolHours.class);
@@ -56,7 +56,7 @@ public class SetSleepHours extends AppCompatActivity implements View.OnClickList
 
             } else {
                 // it's school
-                Intent intent = new Intent(this, SetSchoolHours.class);
+                Intent intent = new Intent(this, SetSocialHours.class);
                 intent.putExtras(extras);
                 startActivity(intent);
             }

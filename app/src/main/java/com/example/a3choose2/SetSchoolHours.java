@@ -48,8 +48,8 @@ public class SetSchoolHours extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
 
         } else {
-            Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
-            toast.show();
+           // Toast toast = Toast.makeText(this, priorities.get(curr), Toast.LENGTH_SHORT);
+           // toast.show();
             if (priorities.get(curr) == "Social") {
 
                 Intent intent = new Intent(this, SetSocialHours.class);
